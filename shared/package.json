@@ -1,0 +1,14 @@
+{
+  "name": "@what-to-hack/shared",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./index.ts"
+    },
+    "./types/database.ts": {
+      "import": "./types/database.ts"
+    }
+  }
+}

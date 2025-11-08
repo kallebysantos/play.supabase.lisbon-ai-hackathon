@@ -1,0 +1,9 @@
+{
+  "name": "what-to-hack",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:web": "pnpm --filter www dev"
+  },
+  "packageManager": "pnpm@10.19.0"
+}
