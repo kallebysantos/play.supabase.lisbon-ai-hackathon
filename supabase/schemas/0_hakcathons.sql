@@ -2,7 +2,7 @@ create table hackathons (
   id uuid not null primary key default uuid_generate_v4(),
   url text unique,
   name text,
-  host_company text not null,
+  host_company text,
   description text,
   sponsors text[],
   location text,

@@ -2,9 +2,9 @@
 SELECT pgflow.create_flow('scrap_hackathon');
 SELECT pgflow.add_step('scrap_hackathon', 'scrap');
 SELECT pgflow.add_step('scrap_hackathon', 'extractMetadata', ARRAY['scrap']);
-SELECT pgflow.add_step('scrap_hackathom', 'saveToDb', ARRAY['extractMetadata']);
+SELECT pgflow.add_step('scrap_hackathon', 'saveToDb', ARRAY['extractMetadata']);
 
--- Handle a new room and push it to the queue
+-- Handle a new hackathon and push it to the queue
 create or replace function private.handle_new_hackathon_apply_webscrap_batch()
 returns trigger
 language plpgsql
@@ -18,7 +18,7 @@ end;
 $$;
 
 create or replace trigger on_handle_new_hackathon_apply_webscrap_batch
-after insert on rooms
+after insert on hackathons
   for each row
   execute function private.handle_new_hackathon_apply_webscrap_batch();
 
